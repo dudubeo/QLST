@@ -17,3 +17,6 @@ F:\nam3_ki2\tt nhom\code c#\QLST\QLST\obj\Debug\QLST.UC.ThongKe.resources
 F:\nam3_ki2\tt nhom\code c#\QLST\QLST\obj\Debug\QLST.UC.TimKiem.resources
 F:\nam3_ki2\tt nhom\code c#\QLST\QLST\obj\Debug\QLST.Properties.Resources.resources
 F:\nam3_ki2\tt nhom\code c#\QLST\QLST\obj\Debug\QLST.Form_dangnhap.resources
+F:\nam3_ki2\tt nhom\quanlisieuthi\QLST\QLST\bin\Debug\QLST.exe.config
+F:\nam3_ki2\tt nhom\quanlisieuthi\QLST\QLST\obj\Debug\QLST.exe
+F:\nam3_ki2\tt nhom\quanlisieuthi\QLST\QLST\obj\Debug\QLST.pdb

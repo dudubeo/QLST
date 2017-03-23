@@ -68,11 +68,11 @@ MaPN char(10) not null,
 MaThuKho char(10),
 MaKho char(10),
 Ngaylap datetime,
-Dongia float,
 VAT float,
 Tongtien money,
 constraint PN_MaPN_PK primary key(MaPN),
 constraint PN_KH_FK foreign key(MaKho) references KhoHang(MaKho)
+constraint PN_NV_FK foreign key(mathukho) references nhanvien(manv)
 )
 go
 create table ChitietNhap(

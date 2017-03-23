@@ -39,15 +39,22 @@ namespace QLST.BUS
         {
             return DAO.xuat_hoadon();
         }
-       
+
         public static DataTable xuat_cthd(string ma)
         {
             return DAO.xuat_cthd(ma);
 
         }
-        public static DataTable clickhd(string a)
+        //Nhập hàng
+        public static DataTable xuat_pn()
         {
-            return DAO.clickhd(a);
+            return DAO.xuat_pn();
+        }
+
+        public static DataTable xuat_ctn(string ma)
+        {
+            return DAO.xuat_ctn(ma);
+
         }
     }
 }

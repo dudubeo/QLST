@@ -45,10 +45,14 @@ namespace QLST.DAL
         {
             return DataProvider.GetData("get_cthd" + "'" + ma + "'");
         }
-        public static DataTable clickhd(string a)
+        //Nhập hàng
+        public static DataTable xuat_pn()
         {
-            return DataProvider.GetData("select *from ChitietHoaDon where ChitietHoaDon.MaHD =" + "'" + a + "'");
+            return DataProvider.GetData("get_pn");
         }
-
+        public static DataTable xuat_ctn(string ma)
+        {
+            return DataProvider.GetData("get_ctn" + "'" + ma + "'");
+        }
     }
 }

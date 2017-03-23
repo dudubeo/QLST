@@ -46,8 +46,8 @@ namespace QLST.UC
             txt_mahd.Text = dgv_hoadon.CurrentRow.Cells[0].Value.ToString();
             cmb_tennv.Text = dgv_hoadon.CurrentRow.Cells[1].Value.ToString();
             txt_makh.Text = dgv_hoadon.CurrentRow.Cells[2].Value.ToString();
-            textBox3.Text = dgv_hoadon.CurrentRow.Cells[3].Value.ToString();
-            textBox4.Text = dgv_hoadon.CurrentRow.Cells[4].Value.ToString();
+            dtp_ngaylap.Text = dgv_hoadon.CurrentRow.Cells[3].Value.ToString();
+            txt_vat.Text = dgv_hoadon.CurrentRow.Cells[4].Value.ToString();
             txt_tongtien.Text = dgv_hoadon.CurrentRow.Cells[5].Value.ToString();
         }
 

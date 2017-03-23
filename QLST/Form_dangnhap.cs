@@ -46,7 +46,7 @@ namespace QLST
             {
                 errortk.Icon = Properties.Resources._1481007037_Tick_Mark;
                 errortk.SetError(txt_tk, "OK");
-                SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-ONTHQMQ;Initial Catalog=quanlisieuthi;Integrated Security=True");
+                SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-ONTHQMQ;Initial Catalog=quanlisieuthi2;Integrated Security=True");
                 con.Open();
                 string s = "select count(*) from taikhoan where username='" + txt_tk.Text + "'and password='" + txt_mk.Text + "'";
 
