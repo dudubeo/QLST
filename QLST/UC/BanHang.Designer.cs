@@ -33,9 +33,9 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.dgv_ct = new System.Windows.Forms.DataGridView();
             this.chitiethoadon = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.them1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.sua1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.xoa1 = new System.Windows.Forms.ToolStripMenuItem();
             this.panel4 = new System.Windows.Forms.Panel();
             this.dgv_hoadon = new System.Windows.Forms.DataGridView();
             this.hoadon = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -43,15 +43,17 @@
             this.sửaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.xóaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btn_reset = new System.Windows.Forms.Button();
+            this.btn_luu = new System.Windows.Forms.Button();
             this.txt_tongtien = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cmb_kh = new System.Windows.Forms.ComboBox();
             this.dtp_ngaylap = new System.Windows.Forms.DateTimePicker();
             this.label12 = new System.Windows.Forms.Label();
             this.txt_vat = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.txt_makh = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.cmb_tennv = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -71,8 +73,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.txt_macthd = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.panel_banhang.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ct)).BeginInit();
@@ -127,32 +127,35 @@
             // 
             this.chitiethoadon.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.chitiethoadon.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1,
-            this.toolStripMenuItem2,
-            this.toolStripMenuItem3});
+            this.them1,
+            this.sua1,
+            this.xoa1});
             this.chitiethoadon.Name = "hoadon";
-            this.chitiethoadon.Size = new System.Drawing.Size(122, 82);
+            this.chitiethoadon.Size = new System.Drawing.Size(120, 82);
             // 
-            // toolStripMenuItem1
+            // them1
             // 
-            this.toolStripMenuItem1.Image = global::QLST.Properties.Resources.Add;
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(121, 26);
-            this.toolStripMenuItem1.Text = "Thêm";
+            this.them1.Image = global::QLST.Properties.Resources.Add;
+            this.them1.Name = "them1";
+            this.them1.Size = new System.Drawing.Size(119, 26);
+            this.them1.Text = "Thêm";
+            this.them1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
-            // toolStripMenuItem2
+            // sua1
             // 
-            this.toolStripMenuItem2.Image = global::QLST.Properties.Resources._1489101110_Edit2;
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(121, 26);
-            this.toolStripMenuItem2.Text = "Sửa";
+            this.sua1.Image = global::QLST.Properties.Resources._1489101110_Edit2;
+            this.sua1.Name = "sua1";
+            this.sua1.Size = new System.Drawing.Size(119, 26);
+            this.sua1.Text = "Sửa";
+            this.sua1.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
             // 
-            // toolStripMenuItem3
+            // xoa1
             // 
-            this.toolStripMenuItem3.Image = global::QLST.Properties.Resources.baoloi;
-            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(121, 26);
-            this.toolStripMenuItem3.Text = "Xóa";
+            this.xoa1.Image = global::QLST.Properties.Resources.baoloi;
+            this.xoa1.Name = "xoa1";
+            this.xoa1.Size = new System.Drawing.Size(119, 26);
+            this.xoa1.Text = "Xóa";
+            this.xoa1.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
             // 
             // panel4
             // 
@@ -189,33 +192,36 @@
             this.sửaToolStripMenuItem,
             this.xóaToolStripMenuItem});
             this.hoadon.Name = "hoadon";
-            this.hoadon.Size = new System.Drawing.Size(122, 82);
+            this.hoadon.Size = new System.Drawing.Size(120, 82);
             // 
             // thêmToolStripMenuItem
             // 
             this.thêmToolStripMenuItem.Image = global::QLST.Properties.Resources.Add;
             this.thêmToolStripMenuItem.Name = "thêmToolStripMenuItem";
-            this.thêmToolStripMenuItem.Size = new System.Drawing.Size(121, 26);
+            this.thêmToolStripMenuItem.Size = new System.Drawing.Size(119, 26);
             this.thêmToolStripMenuItem.Text = "Thêm";
+            this.thêmToolStripMenuItem.Click += new System.EventHandler(this.thêmToolStripMenuItem_Click);
             // 
             // sửaToolStripMenuItem
             // 
             this.sửaToolStripMenuItem.Image = global::QLST.Properties.Resources._1489101110_Edit2;
             this.sửaToolStripMenuItem.Name = "sửaToolStripMenuItem";
-            this.sửaToolStripMenuItem.Size = new System.Drawing.Size(121, 26);
+            this.sửaToolStripMenuItem.Size = new System.Drawing.Size(119, 26);
             this.sửaToolStripMenuItem.Text = "Sửa";
+            this.sửaToolStripMenuItem.Click += new System.EventHandler(this.sửaToolStripMenuItem_Click);
             // 
             // xóaToolStripMenuItem
             // 
             this.xóaToolStripMenuItem.Image = global::QLST.Properties.Resources.baoloi;
             this.xóaToolStripMenuItem.Name = "xóaToolStripMenuItem";
-            this.xóaToolStripMenuItem.Size = new System.Drawing.Size(121, 26);
+            this.xóaToolStripMenuItem.Size = new System.Drawing.Size(119, 26);
             this.xóaToolStripMenuItem.Text = "Xóa";
+            this.xóaToolStripMenuItem.Click += new System.EventHandler(this.xóaToolStripMenuItem_Click);
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.button2);
-            this.panel3.Controls.Add(this.button1);
+            this.panel3.Controls.Add(this.btn_reset);
+            this.panel3.Controls.Add(this.btn_luu);
             this.panel3.Controls.Add(this.txt_tongtien);
             this.panel3.Controls.Add(this.label7);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -224,12 +230,35 @@
             this.panel3.Size = new System.Drawing.Size(988, 49);
             this.panel3.TabIndex = 4;
             // 
+            // btn_reset
+            // 
+            this.btn_reset.Location = new System.Drawing.Point(857, 3);
+            this.btn_reset.Name = "btn_reset";
+            this.btn_reset.Size = new System.Drawing.Size(75, 34);
+            this.btn_reset.TabIndex = 17;
+            this.btn_reset.Text = "Reset";
+            this.btn_reset.UseVisualStyleBackColor = true;
+            this.btn_reset.Click += new System.EventHandler(this.btn_reset_Click);
+            // 
+            // btn_luu
+            // 
+            this.btn_luu.Location = new System.Drawing.Point(755, 3);
+            this.btn_luu.Name = "btn_luu";
+            this.btn_luu.Size = new System.Drawing.Size(75, 34);
+            this.btn_luu.TabIndex = 16;
+            this.btn_luu.Text = "Lưu";
+            this.btn_luu.UseVisualStyleBackColor = true;
+            this.btn_luu.Click += new System.EventHandler(this.btn_luu_Click);
+            // 
             // txt_tongtien
             // 
+            this.txt_tongtien.Enabled = false;
             this.txt_tongtien.Location = new System.Drawing.Point(267, 15);
             this.txt_tongtien.Name = "txt_tongtien";
             this.txt_tongtien.Size = new System.Drawing.Size(193, 22);
             this.txt_tongtien.TabIndex = 11;
+            this.txt_tongtien.Text = "0";
+            this.txt_tongtien.TextChanged += new System.EventHandler(this.txt_tongtien_TextChanged);
             // 
             // label7
             // 
@@ -242,12 +271,12 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.cmb_kh);
             this.panel1.Controls.Add(this.dtp_ngaylap);
             this.panel1.Controls.Add(this.label12);
             this.panel1.Controls.Add(this.txt_vat);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.txt_makh);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.cmb_tennv);
             this.panel1.Controls.Add(this.label3);
@@ -258,6 +287,14 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(463, 196);
             this.panel1.TabIndex = 2;
+            // 
+            // cmb_kh
+            // 
+            this.cmb_kh.FormattingEnabled = true;
+            this.cmb_kh.Location = new System.Drawing.Point(91, 127);
+            this.cmb_kh.Name = "cmb_kh";
+            this.cmb_kh.Size = new System.Drawing.Size(135, 24);
+            this.cmb_kh.TabIndex = 12;
             // 
             // dtp_ngaylap
             // 
@@ -283,6 +320,7 @@
             this.txt_vat.Name = "txt_vat";
             this.txt_vat.Size = new System.Drawing.Size(135, 22);
             this.txt_vat.TabIndex = 9;
+            this.txt_vat.TextChanged += new System.EventHandler(this.txt_vat_TextChanged);
             // 
             // label6
             // 
@@ -302,21 +340,14 @@
             this.label5.TabIndex = 6;
             this.label5.Text = "Ngày lập";
             // 
-            // txt_makh
-            // 
-            this.txt_makh.Location = new System.Drawing.Point(91, 128);
-            this.txt_makh.Name = "txt_makh";
-            this.txt_makh.Size = new System.Drawing.Size(135, 22);
-            this.txt_makh.TabIndex = 5;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(17, 128);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(50, 17);
+            this.label4.Size = new System.Drawing.Size(31, 17);
             this.label4.TabIndex = 4;
-            this.label4.Text = "Mã KH";
+            this.label4.Text = " KH";
             // 
             // cmb_tennv
             // 
@@ -375,6 +406,7 @@
             // 
             // cmb_gia
             // 
+            this.cmb_gia.Enabled = false;
             this.cmb_gia.FormattingEnabled = true;
             this.cmb_gia.Location = new System.Drawing.Point(366, 85);
             this.cmb_gia.Name = "cmb_gia";
@@ -436,6 +468,7 @@
             this.cmb_hh.Size = new System.Drawing.Size(135, 24);
             this.cmb_hh.TabIndex = 10;
             this.cmb_hh.SelectedIndexChanged += new System.EventHandler(this.cmb_hh_SelectedIndexChanged);
+            this.cmb_hh.TextChanged += new System.EventHandler(this.cmb_hh_TextChanged);
             // 
             // label11
             // 
@@ -474,6 +507,7 @@
             // 
             // txt_macthd
             // 
+            this.txt_macthd.Enabled = false;
             this.txt_macthd.Location = new System.Drawing.Point(101, 37);
             this.txt_macthd.Name = "txt_macthd";
             this.txt_macthd.Size = new System.Drawing.Size(135, 22);
@@ -487,24 +521,6 @@
             this.label8.Size = new System.Drawing.Size(58, 17);
             this.label8.TabIndex = 2;
             this.label8.Text = "Mã cthd";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(755, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 34);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "Lưu";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(857, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 34);
-            this.button2.TabIndex = 17;
-            this.button2.Text = "Reset";
-            this.button2.UseVisualStyleBackColor = true;
             // 
             // BanHang
             // 
@@ -543,9 +559,9 @@
         private System.Windows.Forms.ToolStripMenuItem sửaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem xóaToolStripMenuItem;
         private System.Windows.Forms.ContextMenuStrip chitiethoadon;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem them1;
+        private System.Windows.Forms.ToolStripMenuItem sua1;
+        private System.Windows.Forms.ToolStripMenuItem xoa1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ComboBox cmb_tennv;
         private System.Windows.Forms.Label label3;
@@ -556,7 +572,6 @@
         private System.Windows.Forms.TextBox txt_vat;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txt_makh;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.ComboBox cmb_hh;
@@ -577,7 +592,8 @@
         private System.Windows.Forms.ComboBox cmb_gia;
         private System.Windows.Forms.ComboBox cmb_dvt;
         private System.Windows.Forms.DateTimePicker dtp_ngaylap;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_reset;
+        private System.Windows.Forms.Button btn_luu;
+        private System.Windows.Forms.ComboBox cmb_kh;
     }
 }

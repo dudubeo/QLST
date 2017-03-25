@@ -45,6 +45,34 @@ namespace QLST.BUS
             return DAO.xuat_cthd(ma);
 
         }
+        public static int them_hoadon(Hoadon a)
+        {
+            return DAO.them_hoadon(a);
+        }
+        public static int sua_hoadon(Hoadon a)
+        {
+            return DAO.sua_hoadon(a);
+        }
+        public static int sua_hoadon1(Hoadon a)
+        {
+            return DAO.sua_hoadon1(a);
+        }
+        public static int xoa_hoadon(Hoadon a)
+        {
+            return DAO.xoa_hoadon(a);
+        }
+        public static int them_cthd(ChitietHoaDon a)
+        {
+            return DAO.them_cthd(a);
+        }
+        public static int sua_cthd(ChitietHoaDon a)
+        {
+            return DAO.sua_cthd(a);
+        }
+        public static int xoa_cthd(ChitietHoaDon a)
+        {
+            return DAO.xoa_cthd(a);
+        }
         //Nhập hàng
         public static DataTable xuat_pn()
         {
