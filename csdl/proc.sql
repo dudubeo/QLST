@@ -19,9 +19,9 @@ end
 go
 
 select mapn from PhieuNhap,NhanVien where PhieuNhap.MaThuKho=NhanVien.MaNV
-create proc get_ctn(@ma char(10))
+alter proc get_ctn(@ma char(10))
 as begin
-select Mactn as[Mã CTN],TenHH as[Tên HH],Soluong as [SL],Dongia as[Gia] ,Tien as[Tiền] from ChitietNhap,HangHoa
+select Mactn as[Mã CTN],TenHH as[Tên HH],chitietnhap.Soluong as [SL],Dongia as[Gia] ,Tien as[Tiền] from ChitietNhap,HangHoa
 where HangHoa.MaHH=ChitietNhap.MaHH and MaPN=@ma
 end
 go
@@ -56,11 +56,11 @@ go
 alter proc get_cthd(@ma char(10))
 as
 begin
-select MactHD as[Mã CTHD],TenHH as[Tên HH],cast(Dongia as int) as[Đơn giá],soluong as[Số Lượng],DonViTinh  as[DVT],cast(Tien as int) as[Tiền] from ChitietHoaDon,HangHoa
+select MactHD as[Mã CTHD],TenHH as[Tên HH],cast(Dongia as int) as[Đơn giá],chitiethoadon.soluong as[Số Lượng],DonViTinh  as[DVT],cast(Tien as int) as[Tiền] from ChitietHoaDon,HangHoa
 where ChitietHoaDon.MaHH=HangHoa.MaHH and MaHD=@ma
 end
 go
---get_cthd 'hd001'
+get_cthd 'hd001'
 alter proc them_hoadon(@mahd char(10),@manv char(10),@makh char(10),@ngaylap datetime,@vat float)
 as 
 begin
@@ -127,4 +127,120 @@ go
 update ChitietHoaDon
 set Dongia=(select GiaBan from HangHoa where HangHoa.MaHH=ChitietHoaDon.MaHH)
 go
-
+update ChitietNhap set Dongia=0
+go
+update ChitietNhap
+set Dongia=(select cast((GiaBan-GiaBan*0.2)as int) from HangHoa where HangHoa.MaHH=ChitietNhap.MaHH)
+go
+update HangHoa
+set soluong=100
+go
+alter trigger update_sl on Chitiethoadon for update,delete,insert as
+begin
+declare @macthd1 char(10),@macthd2 char(10),@sl1 int,@sl2 int,@mahh1 char(15),@mahh2 char(15)
+select @macthd1=macthd from inserted
+select @sl1=soluong,@mahh1=MaHH from ChitietHoaDon where MactHD=@macthd1
+select @macthd2=macthd from deleted
+select @sl2=soluong,@mahh2=MaHH from ChitietHoaDon where MactHD=@macthd2
+update HangHoa
+set soluong=soluong-@sl1
+where MaHH=@mahh1
+update HangHoa
+set soluong =soluong+@sl2
+where MaHH=@mahh2
+  end
+  go
+alter trigger update_sl1 on chitiethoadon for update as
+ begin
+if update(soluong)
+    update HangHoa
+set hanghoa.soluong=HangHoa.soluong-  (inserted.soluong-deleted.soluong)
+    FROM inserted,deleted
+    WHERE inserted.MaHH = HangHoa.MaHH 
+	end
+go
+create trigger update_sl2 on chitietnhap for update as
+ begin
+if update(soluong)
+    update HangHoa
+set hanghoa.soluong=HangHoa.soluong+ (inserted.soluong-deleted.soluong)
+    FROM inserted,deleted
+    WHERE inserted.MaHH = HangHoa.MaHH 
+	end
+go
+create trigger update_sl4 on Chitietnhap for update,delete,insert as
+begin
+declare @mactn1 char(10),@mactn2 char(10),@sl1 int,@sl2 int,@mahh1 char(15),@mahh2 char(15)
+select @mactn1=mactn from inserted
+select @sl1=soluong,@mahh1=MaHH from ChitietHoaDon where MactHD=@mactn1
+select @mactn2=mactn from deleted
+select @sl2=soluong,@mahh2=MaHH from ChitietHoaDon where MactHD=@mactn2
+update HangHoa
+set soluong=soluong+@sl1
+where MaHH=@mahh1
+update HangHoa
+set soluong =soluong-@sl2
+where MaHH=@mahh2
+  end
+  go
+update ChitietHoaDon
+set soluong =2
+go 
+update ChitietNhap
+set Soluong=2
+go
+create trigger tongtien on chitiethoadon for update,delete,insert
+ as
+ begin
+declare @macthd1 char(10),@macthd2 char(10),@mahd1 char(10), @mahd2 char(10)
+select @macthd1=macthd from inserted
+select @mahd1=mahd from ChitietHoaDon  where MactHD=@macthd1
+select @macthd2=macthd from deleted
+select @mahd2=mahd from ChitietHoaDon  where MactHD=@macthd2
+update HoaDon
+set Tongtien=(select sum(tien) from ChitietHoaDon where ChitietHoaDon.MaHD=HoaDon.MaHD)
+where MaHD=@mahd1
+update HoaDon
+set Tongtien=(select sum(tien) from ChitietHoaDon where ChitietHoaDon.MaHD=HoaDon.MaHD)
+where MaHD=@mahd2
+end
+go
+create trigger tongtien1 on chitiethoadon for update as
+ begin
+if update(soluong)
+    update HoaDon
+set Tongtien=(select sum(tien) from ChitietHoaDon where ChitietHoaDon.MaHD=HoaDon.MaHD)
+    FROM inserted,deleted
+    WHERE inserted.MaHD = HoaDon.MaHD
+	end
+go
+create trigger tongtien3 on chitietnhap for update,delete,insert
+ as
+ begin
+declare @mactn1 char(10),@mactn2 char(10),@mapn1 char(10), @mapn2 char(10)
+select @mactn1=mactn from inserted
+select @mapn1=MaPN from Chitietnhap  where Mactn=@mactn1
+select @mactn2=mactn from deleted
+select @mapn2=mapn from Chitietnhap  where Mactn=@mactn2
+update PhieuNhap
+set Tongtien=(select sum(tien) from ChitietNhap where ChitietNhap.Mapn=PhieuNhap.MaPN)
+where MaPN=@mapn1
+update PhieuNhap
+set Tongtien=(select sum(tien) from ChitietNhap where ChitietNhap.Mapn=PhieuNhap.MaPN)
+where MaPN=@mapn2
+end
+go
+create trigger tongtien4 on chitietnhap for update as
+ begin
+if update(soluong)
+    update PhieuNhap
+set Tongtien=(select sum(tien) from ChitietHoaDon where ChitietHoaDon.MaHD=PhieuNhap.MaPN)
+    FROM inserted,deleted
+    WHERE inserted.MaPN = PhieuNhap.MaPN
+	end
+	go
+	update ChitietHoaDon
+	set Tien=Dongia*soluong
+	go
+	update ChitietNhap
+	set Tien=Dongia*Soluong

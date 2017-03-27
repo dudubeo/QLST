@@ -279,13 +279,13 @@ namespace QLST.UC
             b.Soluong = int.Parse(txt_sl.Text);
             b.Tien = float.Parse(txt_tien.Text);
 
-           
+            if (b.Macthd == null || b.Macthd == "") throw new Exception();
             if (BUS.BUS.sua_cthd(b) == 1)
             {
                 MessageBox.Show("Sửa thành công");
                 txt_macthd.Enabled = false;
             }
-            else MessageBox.Show("lỗi");
+           // else { MessageBox.Show("lỗi"); }
             string ma = txt_mahd.Text;
             dgv_ct.DataSource = BUS.BUS.xuat_cthd(ma);
             txt_macthd.Enabled = false;
