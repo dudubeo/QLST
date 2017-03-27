@@ -17,7 +17,7 @@ namespace QLST.DAL
         {
             try
             {
-                string sql = @"Data Source=DESKTOP-ONTHQMQ;Initial Catalog=quanlisieuthi;Integrated Security=True";
+                string sql = @"Data Source=DESKTOP-ONTHQMQ;Initial Catalog=quanlisieuthi2;Integrated Security=True";
                 SqlConnection conn = new SqlConnection(sql);
                 conn.Open();
 

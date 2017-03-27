@@ -219,6 +219,7 @@
             this.timkiem.Font = new System.Drawing.Font("Vivaldi", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.timkiem.ForeColor = System.Drawing.Color.White;
             this.timkiem.Image = global::QLST.Properties.Resources.Search;
+            this.timkiem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.timkiem.Name = "timkiem";
             this.timkiem.Size = new System.Drawing.Size(261, 33);
             this.timkiem.Text = "Tìm Kiếm";
@@ -255,6 +256,7 @@
             this.hanghoa.Font = new System.Drawing.Font("Vivaldi", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.hanghoa.ForeColor = System.Drawing.Color.White;
             this.hanghoa.Image = global::QLST.Properties.Resources.images__3_;
+            this.hanghoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.hanghoa.Name = "hanghoa";
             this.hanghoa.Size = new System.Drawing.Size(261, 33);
             this.hanghoa.Text = "Hàng Hóa";
@@ -262,6 +264,7 @@
             // 
             // nhaphang
             // 
+            this.nhaphang.Image = global::QLST.Properties.Resources.nhaphang;
             this.nhaphang.Name = "nhaphang";
             this.nhaphang.Size = new System.Drawing.Size(227, 34);
             this.nhaphang.Text = "Nhập Hàng";
@@ -303,6 +306,7 @@
             this.khachhang.Font = new System.Drawing.Font("Vivaldi", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.khachhang.ForeColor = System.Drawing.Color.White;
             this.khachhang.Image = global::QLST.Properties.Resources.User;
+            this.khachhang.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.khachhang.Name = "khachhang";
             this.khachhang.Size = new System.Drawing.Size(261, 33);
             this.khachhang.Text = "Khách Hàng";
@@ -335,7 +339,8 @@
             this.Nhanvien.BackColor = System.Drawing.Color.Black;
             this.Nhanvien.Font = new System.Drawing.Font("Vivaldi", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Nhanvien.ForeColor = System.Drawing.Color.White;
-            this.Nhanvien.Image = global::QLST.Properties.Resources.Add1;
+            this.Nhanvien.Image = global::QLST.Properties.Resources.nv;
+            this.Nhanvien.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Nhanvien.Name = "Nhanvien";
             this.Nhanvien.Size = new System.Drawing.Size(261, 33);
             this.Nhanvien.Text = "Nhân Viên";
@@ -368,7 +373,8 @@
             this.kho.BackColor = System.Drawing.Color.Black;
             this.kho.Font = new System.Drawing.Font("Vivaldi", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.kho.ForeColor = System.Drawing.Color.White;
-            this.kho.Image = global::QLST.Properties.Resources._1489100989_Remove;
+            this.kho.Image = global::QLST.Properties.Resources.kho;
+            this.kho.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.kho.Name = "kho";
             this.kho.Size = new System.Drawing.Size(261, 33);
             this.kho.Text = "Kho";
@@ -412,7 +418,8 @@
             this.Help.BackColor = System.Drawing.Color.Black;
             this.Help.Font = new System.Drawing.Font("Vivaldi", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Help.ForeColor = System.Drawing.Color.White;
-            this.Help.Image = global::QLST.Properties.Resources.User;
+            this.Help.Image = global::QLST.Properties.Resources.Help;
+            this.Help.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Help.Name = "Help";
             this.Help.Size = new System.Drawing.Size(261, 33);
             this.Help.Text = "Trợ giúp";
@@ -434,7 +441,8 @@
             this.thongke.BackColor = System.Drawing.Color.Black;
             this.thongke.Font = new System.Drawing.Font("Vivaldi", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.thongke.ForeColor = System.Drawing.Color.White;
-            this.thongke.Image = global::QLST.Properties.Resources.dautich;
+            this.thongke.Image = global::QLST.Properties.Resources.tk;
+            this.thongke.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.thongke.Name = "thongke";
             this.thongke.Size = new System.Drawing.Size(261, 33);
             this.thongke.Text = "Thống Kê";

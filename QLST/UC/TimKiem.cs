@@ -15,6 +15,16 @@ namespace QLST.UC
         public TimKiem()
         {
             InitializeComponent();
+            
+        }
+        private void xuat()
+        {
+            dgv_timkiem.DataSource = BUS.BUS.xuat_HH();
+        }
+
+        private void TimKiem_Load(object sender, EventArgs e)
+        {
+            xuat();
         }
     }
 }

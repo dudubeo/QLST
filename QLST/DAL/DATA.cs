@@ -45,10 +45,101 @@ namespace QLST.DAL
         {
             return DataProvider.GetData("get_cthd" + "'" + ma + "'");
         }
-        public static DataTable clickhd(string a)
+        public static int them_hoadon(Hoadon a)
         {
-            return DataProvider.GetData("select *from ChitietHoaDon where ChitietHoaDon.MaHD =" + "'" + a + "'");
-        }
+            SqlParameter[] para = new SqlParameter[]
+            {
+                new SqlParameter("@mahd", a.Mahd),
+                new SqlParameter("@manv", a.Manv),
+                new SqlParameter("@makh", a.Makh),
+                new SqlParameter("@ngaylap", a.Ngaylap),
+                new SqlParameter("@vat", a.Vat),
+            
 
+            };
+            return DataProvider.ExecuteNonQuery("them_hoadon", para);
+        }
+        public static int sua_hoadon(Hoadon a)
+        {
+            SqlParameter[] para = new SqlParameter[]
+            {
+                new SqlParameter("@mahd", a.Mahd),
+                new SqlParameter("@manv", a.Manv),
+                new SqlParameter("@makh", a.Makh),
+                new SqlParameter("@ngaylap", a.Ngaylap),
+                new SqlParameter("@vat", a.Vat),
+              
+
+            };
+            return DataProvider.ExecuteNonQuery("sua_hoadon", para);
+        }
+        public static int sua_hoadon1(Hoadon a)
+        {
+            SqlParameter[] para = new SqlParameter[]
+            {
+                new SqlParameter("@mahd", a.Mahd),
+                
+                new SqlParameter("@tongtien", a.Tongtien),
+
+            };
+            return DataProvider.ExecuteNonQuery("luu_tien", para);
+        }
+        public static int xoa_hoadon(Hoadon a)
+        {
+            SqlParameter[] para = new SqlParameter[]
+            {
+                new SqlParameter("@ma", a.Mahd),
+
+
+            };
+            return DataProvider.ExecuteNonQuery("xoa_hoadon", para);
+        }
+        public static int them_cthd(ChitietHoaDon a)
+        {
+            SqlParameter[] para = new SqlParameter[]
+            {
+                new SqlParameter("@macthd", a.Macthd),
+                new SqlParameter("@mahd", a.Mahd),
+                new SqlParameter("@mahh", a.Mahh),
+                new SqlParameter("@dongia", a.Dongia),
+                new SqlParameter("@sl", a.Soluong),
+                new SqlParameter("@tien", a.Tien),
+
+            };
+            return DataProvider.ExecuteNonQuery("them_cthd", para);
+        }
+        public static int sua_cthd(ChitietHoaDon a)
+        {
+            SqlParameter[] para = new SqlParameter[]
+            {
+                new SqlParameter("@macthd", a.Macthd),
+                new SqlParameter("@mahh", a.Mahh),
+                new SqlParameter("@dongia", a.Dongia),
+                new SqlParameter("@sl", a.Soluong),
+                new SqlParameter("@tien", a.Tien),
+
+            };
+            return DataProvider.ExecuteNonQuery("sua_cthd", para);
+        }
+        public static int xoa_cthd(ChitietHoaDon a)
+        {
+            SqlParameter[] para = new SqlParameter[]
+            {
+                new SqlParameter("@macthd", a.Macthd),
+
+
+            };
+            return DataProvider.ExecuteNonQuery("xoa_cthd", para);
+        }
+        //Nhập hàng
+        public static DataTable xuat_pn()
+        {
+            return DataProvider.GetData("get_pn");
+        }
+        public static DataTable xuat_ctn(string ma)
+        {
+            return DataProvider.GetData("get_ctn" + "'" + ma + "'");
+        }
+      
     }
 }
