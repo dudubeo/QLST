@@ -15,10 +15,34 @@ namespace QLST.BUS
         {
             return DAO.xuat_NV();
         }
+        public static int them_nv(Nhanvien a)
+        {
+            return DAO.them_nv(a);
+        }
+        public static int sua_nv(Nhanvien a)
+        {
+            return DAO.sua_nv(a);
+        }
+        public static int xoa_nv(Nhanvien a)
+        {
+            return DAO.xoa_nv(a);
+        }
         //Khách hàng
         public static DataTable xuat_KH()
         {
             return DAO.xuat_KH();
+        }
+        public static int them_kh(Khachhang a)
+        {
+            return DAO.them_kh(a);
+        }
+        public static int sua_kh(Khachhang a)
+        {
+            return DAO.sua_kh(a);
+        }
+        public static int xoa_kh(Khachhang a)
+        {
+            return DAO.xoa_kh(a);
         }
         //Hàng Hóa
         public static DataTable xuat_HH()
@@ -83,6 +107,34 @@ namespace QLST.BUS
         {
             return DAO.xuat_ctn(ma);
 
+        }
+        public static int them_pn(PhieuNhap a)
+        {
+            return DAO.them_pn(a);
+        }
+        public static int sua_pn(PhieuNhap a)
+        {
+            return DAO.sua_pn(a);
+        }
+        public static int sua_pn1(PhieuNhap a)
+        {
+            return DAO.sua_pn1(a);
+        }
+        public static int xoa_pn(PhieuNhap a)
+        {
+            return DAO.xoa_pn(a);
+        }
+        public static int them_ctn(Chitietnhap a)
+        {
+            return DAO.them_ctn(a);
+        }
+        public static int sua_ctn(Chitietnhap a)
+        {
+            return DAO.sua_ctn(a);
+        }
+        public static int xoa_ctn(Chitietnhap a)
+        {
+            return DAO.xoa_ctn(a);
         }
     }
 }

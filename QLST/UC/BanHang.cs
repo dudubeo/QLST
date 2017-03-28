@@ -210,7 +210,7 @@ namespace QLST.UC
                 a.Makh = cmb_kh.SelectedValue.ToString();
                 a.Ngaylap = dtp_ngaylap.Value;
                 a.Vat = float.Parse(txt_vat.Text);
-                // a.Tongtien = float.Parse(txt_tongtien.Text);
+                a.Tongtien = float.Parse(txt_tongtien.Text);
                // txt_tongtien.Text = "0";
                 if (a.Mahd == null || a.Mahd == "") throw new Exception();
                 if (BUS.BUS.them_hoadon(a) == 1)

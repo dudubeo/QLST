@@ -61,12 +61,12 @@ where ChitietHoaDon.MaHH=HangHoa.MaHH and MaHD=@ma
 end
 go
 get_cthd 'hd001'
-alter proc them_hoadon(@mahd char(10),@manv char(10),@makh char(10),@ngaylap datetime,@vat float)
+alter proc them_hoadon(@mahd char(10),@manv char(10),@makh char(10),@ngaylap datetime,@vat float,@tongtien float)
 as 
 begin
 if exists(select MaKH from HoaDon where MaHD=@mahd) print('khong them duoc')
 else
-insert into HoaDon(MaHD,MaNV,MaKH,Ngaylap,VAT) values(@mahd,@manv,@makh,@ngaylap,@vat)
+insert into HoaDon(MaHD,MaNV,MaKH,Ngaylap,VAT,Tongtien) values(@mahd,@manv,@makh,@ngaylap,@vat,@tongtien )
 end
 go
 create proc xoa_hoadon(@ma char(10))
@@ -244,3 +244,103 @@ set Tongtien=(select sum(tien) from ChitietHoaDon where ChitietHoaDon.MaHD=Phieu
 	go
 	update ChitietNhap
 	set Tien=Dongia*Soluong
+---nhân viên----
+create proc them_nv(@manv char(10),@tennv nvarchar(50),@chucvu nvarchar(50),@gt nvarchar(3),@diachi nvarchar(50),@sdt char(15))
+as
+begin
+if exists(select MaNV from NhanVien where Manv=@manv) print('khong them duoc')
+else
+insert NhanVien values(@manv,@tennv,@chucvu,@gt,@diachi,@sdt)
+end
+go
+create proc sua_nv(@manv char(10),@tennv nvarchar(50),@chucvu nvarchar(50),@gt nvarchar(3),@diachi nvarchar(50),@sdt char(15))
+as
+begin
+update NhanVien
+set TenNV=@tennv,
+    ChucVu=@chucvu,
+	Gioitinh=@gt,
+	DiaChi=@diachi,
+	SDT=@sdt
+end
+go
+create proc xoa_nv(@manv char(10))
+as
+begin
+delete NhanVien
+where MaNV=@manv
+end 
+go
+----Khách hàng
+create proc them_kh(@makh char(10),@tenkh nvarchar(50),@diachi nvarchar(50),@gt nvarchar(30),@sdt char(15),@diem int)
+as begin
+if exists(select MaKh from KhachHang where MaKh=@makh) print('khong them duoc')
+else insert KhachHang values(@makh,@tenkh,@diachi,@gt,@sdt,@diem)
+end
+go
+create proc sua_kh(@makh char(10),@tenkh nvarchar(50),@diachi nvarchar(50),@gt nvarchar(30),@sdt char(15),@diem int)
+as begin
+update KhachHang
+set TenKH=@tenkh,
+Diachi=@diachi,
+GioiTinh=@gt,
+SDT=@sdt,
+diem=@diachi
+end
+go
+create proc xoa_kh(@makh char(10))
+as begin
+delete KhachHang where MaKh=@makh
+end
+go
+---Nhập hàng
+---phiếu nhập
+create proc them_pn(@mapn char(10),@mathukho char(10),@makho char(10),@ngaylap datetime,@vat float,@tongtien float)
+as
+begin
+if exists(select Mapn from phieunhap where MaPN=@mapn) print('khong them duoc')
+else
+insert PhieuNhap values(@mapn,@mathukho,@makho,@ngaylap,@vat,@tongtien)
+end
+go
+create proc sua_pn(@mapn char(10),@mathukho char(10),@makho char(10),@ngaylap datetime,@vat float)
+as begin
+update PhieuNhap
+set MaThuKho=@mathukho,
+MaKho=@makho,
+Ngaylap=@ngaylap,
+VAT=@vat
+where MaPN=@mapn
+end
+go
+create proc xoa_pn(@mapn char(10))
+as begin
+delete PhieuNhap where MaPN=@mapn
+end
+go
+create proc luu_tien_nhap(@mapn char(10),@tongtien float)
+as
+begin
+update PhieuNhap
+set Tongtien=@tongtien
+where MaPN=@mapn
+end
+---chi tiết nhập
+create proc them_ctn(@mactn char(10),@mapn char(10),@mahh char(15),@soluong int,@tien float,@dongia float)
+as begin
+if exists(select Mactn from ChitietNhap where Mactn=@mactn) print('khong them duoc')
+else insert ChitietNhap values(@mactn,@mapn,@mahh,@soluong,@tien,@dongia)
+end
+create proc sua_ctn(@mactn char(10),@mahh char(15),@soluong int,@tien float,@dongia float)
+as begin
+update ChitietNhap
+set MaHH=@mahh,
+Soluong=Soluong,
+Tien=@tien,
+Dongia=@dongia
+where Mactn=@mactn
+end
+create proc xoa_ctn(@mactn char(10))
+as begin
+delete ChitietNhap where Mactn=@mactn
+end

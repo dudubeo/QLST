@@ -16,7 +16,7 @@ namespace QLST.DT0
         private float giaban;
         private string noisx;
         private DateTime hsd;
-
+        private int soluong;
         public string Mahh
         {
             get
@@ -118,6 +118,19 @@ namespace QLST.DT0
             set
             {
                 hsd = value;
+            }
+        }
+
+        public int Soluong
+        {
+            get
+            {
+                return soluong;
+            }
+
+            set
+            {
+                soluong = value;
             }
         }
     }
