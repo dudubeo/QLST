@@ -55,7 +55,7 @@ namespace QLST.UC
             txt_mactn.Text = dgv_ctnhap.CurrentRow.Cells[0].Value.ToString();
             cmb_tenhh.Text = dgv_ctnhap.CurrentRow.Cells[1].Value.ToString();
             txt_sl.Text = dgv_ctnhap.CurrentRow.Cells[2].Value.ToString();
-            txt_gia.Text = dgv_ctnhap.CurrentRow.Cells[3].Value.ToString();
+            //cmb_gia.Text = dgv_ctnhap.CurrentRow.Cells[3].Value.ToString();
             txt_tien.Text = dgv_ctnhap.CurrentRow.Cells[4].Value.ToString();
         }
     }

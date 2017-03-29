@@ -30,12 +30,22 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.txt_tongtien = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgv_ctnhap = new System.Windows.Forms.DataGridView();
+            this.chitietnhap = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.dgv_pn = new System.Windows.Forms.DataGridView();
+            this.Phieunhap = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.thêmToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sửaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.xóaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dtp_ngaylap = new System.Windows.Forms.DateTimePicker();
             this.txt_vat = new System.Windows.Forms.TextBox();
@@ -50,7 +60,6 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txt_tien = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.txt_gia = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.txt_sl = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -58,24 +67,15 @@
             this.label8 = new System.Windows.Forms.Label();
             this.txt_mactn = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.Phieunhap = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.thêmToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sửaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.xóaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.chitietnhap = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.cmb_gia = new System.Windows.Forms.ComboBox();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ctnhap)).BeginInit();
+            this.chitietnhap.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_pn)).BeginInit();
+            this.Phieunhap.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.Phieunhap.SuspendLayout();
-            this.chitietnhap.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel3
@@ -89,6 +89,24 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(934, 49);
             this.panel3.TabIndex = 5;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(825, 3);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 34);
+            this.button2.TabIndex = 19;
+            this.button2.Text = "Reset";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(717, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 34);
+            this.button1.TabIndex = 18;
+            this.button1.Text = "Lưu";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // txt_tongtien
             // 
@@ -141,6 +159,37 @@
             this.dgv_ctnhap.TabIndex = 4;
             this.dgv_ctnhap.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_ctnhap_CellContentClick);
             // 
+            // chitietnhap
+            // 
+            this.chitietnhap.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.chitietnhap.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1,
+            this.toolStripMenuItem2,
+            this.toolStripMenuItem3});
+            this.chitietnhap.Name = "hoadon";
+            this.chitietnhap.Size = new System.Drawing.Size(120, 82);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Image = global::QLST.Properties.Resources.Add;
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(119, 26);
+            this.toolStripMenuItem1.Text = "Thêm";
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Image = global::QLST.Properties.Resources._1489101110_Edit2;
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(119, 26);
+            this.toolStripMenuItem2.Text = "Sửa";
+            // 
+            // toolStripMenuItem3
+            // 
+            this.toolStripMenuItem3.Image = global::QLST.Properties.Resources.baoloi;
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(119, 26);
+            this.toolStripMenuItem3.Text = "Xóa";
+            // 
             // dgv_pn
             // 
             this.dgv_pn.AllowUserToAddRows = false;
@@ -158,6 +207,37 @@
             this.dgv_pn.Size = new System.Drawing.Size(660, 277);
             this.dgv_pn.TabIndex = 3;
             this.dgv_pn.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_pn_CellContentClick);
+            // 
+            // Phieunhap
+            // 
+            this.Phieunhap.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.Phieunhap.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.thêmToolStripMenuItem,
+            this.sửaToolStripMenuItem,
+            this.xóaToolStripMenuItem});
+            this.Phieunhap.Name = "hoadon";
+            this.Phieunhap.Size = new System.Drawing.Size(120, 82);
+            // 
+            // thêmToolStripMenuItem
+            // 
+            this.thêmToolStripMenuItem.Image = global::QLST.Properties.Resources.Add;
+            this.thêmToolStripMenuItem.Name = "thêmToolStripMenuItem";
+            this.thêmToolStripMenuItem.Size = new System.Drawing.Size(119, 26);
+            this.thêmToolStripMenuItem.Text = "Thêm";
+            // 
+            // sửaToolStripMenuItem
+            // 
+            this.sửaToolStripMenuItem.Image = global::QLST.Properties.Resources._1489101110_Edit2;
+            this.sửaToolStripMenuItem.Name = "sửaToolStripMenuItem";
+            this.sửaToolStripMenuItem.Size = new System.Drawing.Size(119, 26);
+            this.sửaToolStripMenuItem.Text = "Sửa";
+            // 
+            // xóaToolStripMenuItem
+            // 
+            this.xóaToolStripMenuItem.Image = global::QLST.Properties.Resources.baoloi;
+            this.xóaToolStripMenuItem.Name = "xóaToolStripMenuItem";
+            this.xóaToolStripMenuItem.Size = new System.Drawing.Size(119, 26);
+            this.xóaToolStripMenuItem.Text = "Xóa";
             // 
             // groupBox1
             // 
@@ -263,9 +343,9 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.cmb_gia);
             this.groupBox2.Controls.Add(this.txt_tien);
             this.groupBox2.Controls.Add(this.label12);
-            this.groupBox2.Controls.Add(this.txt_gia);
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.txt_sl);
             this.groupBox2.Controls.Add(this.label10);
@@ -297,17 +377,10 @@
             this.label12.TabIndex = 12;
             this.label12.Text = "Thành Tiền";
             // 
-            // txt_gia
-            // 
-            this.txt_gia.Location = new System.Drawing.Point(286, 77);
-            this.txt_gia.Name = "txt_gia";
-            this.txt_gia.Size = new System.Drawing.Size(130, 22);
-            this.txt_gia.TabIndex = 11;
-            // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(230, 75);
+            this.label11.Location = new System.Drawing.Point(230, 80);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(30, 17);
             this.label11.TabIndex = 10;
@@ -362,85 +435,13 @@
             this.label6.TabIndex = 2;
             this.label6.Text = "Mã CTN";
             // 
-            // Phieunhap
+            // cmb_gia
             // 
-            this.Phieunhap.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.Phieunhap.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.thêmToolStripMenuItem,
-            this.sửaToolStripMenuItem,
-            this.xóaToolStripMenuItem});
-            this.Phieunhap.Name = "hoadon";
-            this.Phieunhap.Size = new System.Drawing.Size(122, 82);
-            // 
-            // thêmToolStripMenuItem
-            // 
-            this.thêmToolStripMenuItem.Image = global::QLST.Properties.Resources.Add;
-            this.thêmToolStripMenuItem.Name = "thêmToolStripMenuItem";
-            this.thêmToolStripMenuItem.Size = new System.Drawing.Size(121, 26);
-            this.thêmToolStripMenuItem.Text = "Thêm";
-            // 
-            // sửaToolStripMenuItem
-            // 
-            this.sửaToolStripMenuItem.Image = global::QLST.Properties.Resources._1489101110_Edit2;
-            this.sửaToolStripMenuItem.Name = "sửaToolStripMenuItem";
-            this.sửaToolStripMenuItem.Size = new System.Drawing.Size(121, 26);
-            this.sửaToolStripMenuItem.Text = "Sửa";
-            // 
-            // xóaToolStripMenuItem
-            // 
-            this.xóaToolStripMenuItem.Image = global::QLST.Properties.Resources.baoloi;
-            this.xóaToolStripMenuItem.Name = "xóaToolStripMenuItem";
-            this.xóaToolStripMenuItem.Size = new System.Drawing.Size(121, 26);
-            this.xóaToolStripMenuItem.Text = "Xóa";
-            // 
-            // chitietnhap
-            // 
-            this.chitietnhap.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.chitietnhap.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1,
-            this.toolStripMenuItem2,
-            this.toolStripMenuItem3});
-            this.chitietnhap.Name = "hoadon";
-            this.chitietnhap.Size = new System.Drawing.Size(122, 82);
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Image = global::QLST.Properties.Resources.Add;
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(181, 26);
-            this.toolStripMenuItem1.Text = "Thêm";
-            // 
-            // toolStripMenuItem2
-            // 
-            this.toolStripMenuItem2.Image = global::QLST.Properties.Resources._1489101110_Edit2;
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(181, 26);
-            this.toolStripMenuItem2.Text = "Sửa";
-            // 
-            // toolStripMenuItem3
-            // 
-            this.toolStripMenuItem3.Image = global::QLST.Properties.Resources.baoloi;
-            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(181, 26);
-            this.toolStripMenuItem3.Text = "Xóa";
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(825, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 34);
-            this.button2.TabIndex = 19;
-            this.button2.Text = "Reset";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(717, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 34);
-            this.button1.TabIndex = 18;
-            this.button1.Text = "Lưu";
-            this.button1.UseVisualStyleBackColor = true;
+            this.cmb_gia.FormattingEnabled = true;
+            this.cmb_gia.Location = new System.Drawing.Point(286, 78);
+            this.cmb_gia.Name = "cmb_gia";
+            this.cmb_gia.Size = new System.Drawing.Size(130, 24);
+            this.cmb_gia.TabIndex = 14;
             // 
             // NhapHang
             // 
@@ -458,13 +459,13 @@
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ctnhap)).EndInit();
+            this.chitietnhap.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_pn)).EndInit();
+            this.Phieunhap.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.Phieunhap.ResumeLayout(false);
-            this.chitietnhap.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -491,7 +492,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txt_tien;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox txt_gia;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txt_sl;
         private System.Windows.Forms.Label label10;
@@ -510,5 +510,6 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox cmb_gia;
     }
 }
