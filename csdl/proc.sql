@@ -53,10 +53,10 @@ select MaHD as[Mã Hóa đơn],TenNV as[Tên NV],MaKH as[Mã KH],Ngaylap as[Ngà
 where NhanVien.MaNV=HoaDon.MaNV
 end
 go
-alter proc get_cthd(@ma char(10))
+create proc get_cthd(@ma char(10))
 as
 begin
-select MactHD as[Mã CTHD],TenHH as[Tên HH],cast(Dongia as int) as[Đơn giá],chitiethoadon.soluong as[Số Lượng],DonViTinh  as[DVT],cast(Tien as int) as[Tiền] from ChitietHoaDon,HangHoa
+select MactHD as[Mã CTHD],TenHH as[Tên HH],cast(Dongia as int) as[Đơn giá],ChitietHoaDon.soluong as[Số Lượng],DonViTinh  as[DVT],cast(Tien as int) as[Tiền] from ChitietHoaDon,HangHoa
 where ChitietHoaDon.MaHH=HangHoa.MaHH and MaHD=@ma
 end
 go
@@ -271,6 +271,8 @@ delete NhanVien
 where MaNV=@manv
 end 
 go
+
+
 ----Khách hàng
 create proc them_kh(@makh char(10),@tenkh nvarchar(50),@diachi nvarchar(50),@gt nvarchar(30),@sdt char(15),@diem int)
 as begin
@@ -315,6 +317,7 @@ end
 go
 create proc xoa_pn(@mapn char(10))
 as begin
+delete ChitietNhap where maPN=@mapn
 delete PhieuNhap where MaPN=@mapn
 end
 go
@@ -324,6 +327,21 @@ begin
 update PhieuNhap
 set Tongtien=@tongtien
 where MaPN=@mapn
+end
+
+create trigger tt on ChitietNhap for update,insert,delete
+as
+begin
+declare @MAPNCU char(10),@MAPNMOI char(10)
+select @MAPNCU=MaPN from deleted
+select @MAPNMOI=MaPN from inserted
+update PhieuNhap
+set Tongtien=(select sum(Tien) from ChitietNhap where MaPN=@MAPNMOI)
+where MaPN=@MAPNMOI
+update PhieuNhap
+set Tongtien=(select sum(Tien) from ChitietNhap where MaPN=@MAPNCU)
+where MaPN=@MAPNCU
+
 end
 ---chi tiết nhập
 create proc them_ctn(@mactn char(10),@mapn char(10),@mahh char(15),@soluong int,@tien float,@dongia float)
