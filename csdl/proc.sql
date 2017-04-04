@@ -366,6 +366,7 @@ create proc xoa_ctn(@mactn char(10))
 as begin
 delete ChitietNhap where Mactn=@mactn
 end
+<<<<<<< HEAD
 ----
 go
 create proc get_HH2(@giaban1 float,@giaban2 float)
@@ -380,3 +381,32 @@ as begin
 select MaHH as[Mã Hàng Hóa],TenHH as[Tên Hàng Hóa],ChungLoai as[Chủng Loại],DonViTinh as[Đơn vị tính],trongluong as [Trọng Lượng],
 GiaBan as[Giá Bán],NoiSX as[ Nơi SX],HSD as[Hạn sử dụng] from HangHoa where ChungLoai = @chungloai
 end
+=======
+
+
+
+--thong ke hang hoa
+
+create proc tkhh
+as
+select CTN.MaHH as 'Mã HH',HH.TenHH as'Tên HH',SLBD=100, sum( CTN.Soluong )as 'SL Nhập' ,sum(CTHD.soluong) as 'SL Bán', HH.Soluong as 'SL Còn'
+from ChitietNhap CTN, HangHoa HH, ChitietHoaDon CTHD
+where CTN.MaHH=HH.MaHH and HH.MaHH=CTHD.MaHH
+group by CTN.MaHH, HH.TenHH, HH.Soluong
+go
+create proc tk_ban
+as
+select CTHD.MaHH as 'Mã HH', HH.TenHH as'Tên HH', sum(CTHD.soluong) as 'Số Lượng',CTHD.Dongia as 'Đơn Giá', sum(CTHD.Tien) as 'Tiền Thu'
+from HoaDon HD, HangHoa HH, ChitietHoaDon CTHD
+where HD.MaHD=CTHD.MaHD and CTHD.MaHH=HH.MaHH
+group by CTHD.MaHH,HH.TenHH,CTHD.Dongia
+
+go
+create proc tk_nhap
+as
+select CTN.MaHH as 'Mã HH', HH.TenHH as'Tên HH', sum(CTN.Soluong) as 'Số Lượng', CTN.Dongia as 'Đơn Giá',(CTN.Tien) as 'Tiền Trả'
+from ChitietNhap CTN, HangHoa HH,PhieuNhap PN
+where CTn.MaHH=HH.MaHH and CTN.MaPN=PN.MaPN
+group by CTN.MaHH,HH.TenHH, CTN.Dongia,CTN.Tien
+
+>>>>>>> ac83f9ff2f81bc51a61ee2d568dc2b1d2a48ce1c
