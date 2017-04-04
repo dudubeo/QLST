@@ -84,5 +84,22 @@ namespace QLST.BUS
             return DAO.xuat_ctn(ma);
 
         }
+
+        //thong ke
+        public static DataTable tk_hh()
+        {
+            return DAO.tk_hh();
+
+        }
+        public static DataTable tk_ban()
+        {
+            return DAO.tk_ban();
+
+        }
+        public static DataTable tk_nhap()
+        {
+            return DAO.tk_nhap();
+
+        }
     }
 }

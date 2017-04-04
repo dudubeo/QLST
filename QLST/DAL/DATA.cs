@@ -11,6 +11,20 @@ namespace QLST.DAL
     class DAO
 
     {
+        //Thong ke
+        public static DataTable tk_hh()
+        {
+            return DataProvider.GetData("tkhh");
+        }
+        public static DataTable tk_ban()
+        {
+            return DataProvider.GetData("tk_ban");
+
+        }
+        public static DataTable tk_nhap()
+        {
+            return DataProvider.GetData("tk_nhap");
+        }
 
         //Nhân Viên
         public static DataTable xuat_NV()
