@@ -91,9 +91,10 @@
             this.paneltop.Controls.Add(this.lbl);
             this.paneltop.Controls.Add(this.lbl_x);
             this.paneltop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.paneltop.Location = new System.Drawing.Point(268, 0);
+            this.paneltop.Location = new System.Drawing.Point(201, 0);
+            this.paneltop.Margin = new System.Windows.Forms.Padding(2);
             this.paneltop.Name = "paneltop";
-            this.paneltop.Size = new System.Drawing.Size(1042, 81);
+            this.paneltop.Size = new System.Drawing.Size(781, 66);
             this.paneltop.TabIndex = 1;
             // 
             // lbl
@@ -101,9 +102,10 @@
             this.lbl.AutoSize = true;
             this.lbl.Font = new System.Drawing.Font("Wide Latin", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl.ForeColor = System.Drawing.Color.Black;
-            this.lbl.Location = new System.Drawing.Point(351, 30);
+            this.lbl.Location = new System.Drawing.Point(263, 24);
+            this.lbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl.Name = "lbl";
-            this.lbl.Size = new System.Drawing.Size(0, 29);
+            this.lbl.Size = new System.Drawing.Size(0, 23);
             this.lbl.TabIndex = 1;
             // 
             // lbl_x
@@ -112,9 +114,10 @@
             this.lbl_x.Dock = System.Windows.Forms.DockStyle.Right;
             this.lbl_x.Font = new System.Drawing.Font("Constantia", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_x.ForeColor = System.Drawing.Color.Red;
-            this.lbl_x.Location = new System.Drawing.Point(1004, 0);
+            this.lbl_x.Location = new System.Drawing.Point(752, 0);
+            this.lbl_x.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_x.Name = "lbl_x";
-            this.lbl_x.Size = new System.Drawing.Size(38, 37);
+            this.lbl_x.Size = new System.Drawing.Size(29, 29);
             this.lbl_x.TabIndex = 0;
             this.lbl_x.Text = "X";
             this.lbl_x.Click += new System.EventHandler(this.lbl_x_Click);
@@ -124,18 +127,20 @@
             this.lbl_sieuthi.AutoSize = true;
             this.lbl_sieuthi.Font = new System.Drawing.Font("Showcard Gothic", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_sieuthi.ForeColor = System.Drawing.Color.White;
-            this.lbl_sieuthi.Location = new System.Drawing.Point(61, 5);
+            this.lbl_sieuthi.Location = new System.Drawing.Point(46, 4);
+            this.lbl_sieuthi.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_sieuthi.Name = "lbl_sieuthi";
-            this.lbl_sieuthi.Size = new System.Drawing.Size(197, 60);
+            this.lbl_sieuthi.Size = new System.Drawing.Size(159, 46);
             this.lbl_sieuthi.TabIndex = 1;
             this.lbl_sieuthi.Text = "\r\nSupermarket";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::QLST.Properties.Resources.tải_xuống__3_;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 9);
+            this.pictureBox1.Location = new System.Drawing.Point(0, 7);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(55, 50);
+            this.pictureBox1.Size = new System.Drawing.Size(41, 41);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -143,9 +148,10 @@
             // panel_main
             // 
             this.panel_main.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_main.Location = new System.Drawing.Point(268, 81);
+            this.panel_main.Location = new System.Drawing.Point(201, 66);
+            this.panel_main.Margin = new System.Windows.Forms.Padding(2);
             this.panel_main.Name = "panel_main";
-            this.panel_main.Size = new System.Drawing.Size(1042, 531);
+            this.panel_main.Size = new System.Drawing.Size(781, 431);
             this.panel_main.TabIndex = 2;
             // 
             // panelgoc
@@ -155,8 +161,9 @@
             this.panelgoc.Controls.Add(this.pictureBox1);
             this.panelgoc.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelgoc.Location = new System.Drawing.Point(0, 0);
+            this.panelgoc.Margin = new System.Windows.Forms.Padding(2);
             this.panelgoc.Name = "panelgoc";
-            this.panelgoc.Size = new System.Drawing.Size(268, 81);
+            this.panelgoc.Size = new System.Drawing.Size(201, 66);
             this.panelgoc.TabIndex = 0;
             // 
             // panel_menu
@@ -164,17 +171,19 @@
             this.panel_menu.Controls.Add(this.pictureBox2);
             this.panel_menu.Controls.Add(this.lbl_menu);
             this.panel_menu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel_menu.Location = new System.Drawing.Point(0, 81);
+            this.panel_menu.Location = new System.Drawing.Point(0, 66);
+            this.panel_menu.Margin = new System.Windows.Forms.Padding(2);
             this.panel_menu.Name = "panel_menu";
-            this.panel_menu.Size = new System.Drawing.Size(268, 63);
+            this.panel_menu.Size = new System.Drawing.Size(201, 51);
             this.panel_menu.TabIndex = 2;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::QLST.Properties.Resources.tao;
-            this.pictureBox2.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox2.Location = new System.Drawing.Point(2, 2);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(52, 39);
+            this.pictureBox2.Size = new System.Drawing.Size(39, 32);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
@@ -185,9 +194,10 @@
             this.lbl_menu.AutoSize = true;
             this.lbl_menu.Font = new System.Drawing.Font("Bauhaus 93", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_menu.ForeColor = System.Drawing.Color.White;
-            this.lbl_menu.Location = new System.Drawing.Point(81, 3);
+            this.lbl_menu.Location = new System.Drawing.Point(61, 2);
+            this.lbl_menu.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_menu.Name = "lbl_menu";
-            this.lbl_menu.Size = new System.Drawing.Size(118, 45);
+            this.lbl_menu.Size = new System.Drawing.Size(93, 36);
             this.lbl_menu.TabIndex = 0;
             this.lbl_menu.Text = "Menu";
             // 
@@ -196,9 +206,10 @@
             this.panel2.Controls.Add(this.menuStrip1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Font = new System.Drawing.Font("Ravie", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel2.Location = new System.Drawing.Point(0, 144);
+            this.panel2.Location = new System.Drawing.Point(0, 117);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(268, 67);
+            this.panel2.Size = new System.Drawing.Size(201, 54);
             this.panel2.TabIndex = 3;
             // 
             // menuStrip1
@@ -209,7 +220,8 @@
             this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(268, 39);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(201, 32);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -221,7 +233,7 @@
             this.timkiem.Image = global::QLST.Properties.Resources.Search;
             this.timkiem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.timkiem.Name = "timkiem";
-            this.timkiem.Size = new System.Drawing.Size(261, 33);
+            this.timkiem.Size = new System.Drawing.Size(196, 26);
             this.timkiem.Text = "Tìm Kiếm";
             this.timkiem.Click += new System.EventHandler(this.timkiem_Click);
             // 
@@ -230,9 +242,10 @@
             this.panel3.Controls.Add(this.menuStrip2);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Font = new System.Drawing.Font("Ravie", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel3.Location = new System.Drawing.Point(0, 408);
+            this.panel3.Location = new System.Drawing.Point(0, 331);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(268, 204);
+            this.panel3.Size = new System.Drawing.Size(201, 166);
             this.panel3.TabIndex = 4;
             // 
             // menuStrip2
@@ -243,7 +256,8 @@
             this.menuStrip2.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Size = new System.Drawing.Size(268, 39);
+            this.menuStrip2.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip2.Size = new System.Drawing.Size(201, 32);
             this.menuStrip2.TabIndex = 0;
             this.menuStrip2.Text = "menuStrip2";
             // 
@@ -258,7 +272,7 @@
             this.hanghoa.Image = global::QLST.Properties.Resources.images__3_;
             this.hanghoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.hanghoa.Name = "hanghoa";
-            this.hanghoa.Size = new System.Drawing.Size(261, 33);
+            this.hanghoa.Size = new System.Drawing.Size(196, 26);
             this.hanghoa.Text = "Hàng Hóa";
             this.hanghoa.Click += new System.EventHandler(this.hanghoa_Click);
             // 
@@ -266,7 +280,7 @@
             // 
             this.nhaphang.Image = global::QLST.Properties.Resources.nhaphang;
             this.nhaphang.Name = "nhaphang";
-            this.nhaphang.Size = new System.Drawing.Size(227, 34);
+            this.nhaphang.Size = new System.Drawing.Size(190, 26);
             this.nhaphang.Text = "Nhập Hàng";
             this.nhaphang.Click += new System.EventHandler(this.nhaphang_Click);
             // 
@@ -274,7 +288,7 @@
             // 
             this.banhang.Image = global::QLST.Properties.Resources.images__3_;
             this.banhang.Name = "banhang";
-            this.banhang.Size = new System.Drawing.Size(227, 34);
+            this.banhang.Size = new System.Drawing.Size(190, 26);
             this.banhang.Text = "Bán Hàng";
             this.banhang.Click += new System.EventHandler(this.banhang_Click);
             // 
@@ -283,9 +297,10 @@
             this.panel4.Controls.Add(this.menuStrip3);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Font = new System.Drawing.Font("Ravie", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel4.Location = new System.Drawing.Point(0, 211);
+            this.panel4.Location = new System.Drawing.Point(0, 171);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(268, 66);
+            this.panel4.Size = new System.Drawing.Size(201, 54);
             this.panel4.TabIndex = 5;
             // 
             // menuStrip3
@@ -296,7 +311,8 @@
             this.menuStrip3.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
             this.menuStrip3.Location = new System.Drawing.Point(0, 0);
             this.menuStrip3.Name = "menuStrip3";
-            this.menuStrip3.Size = new System.Drawing.Size(268, 39);
+            this.menuStrip3.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip3.Size = new System.Drawing.Size(201, 32);
             this.menuStrip3.TabIndex = 0;
             this.menuStrip3.Text = "menuStrip3";
             // 
@@ -308,7 +324,7 @@
             this.khachhang.Image = global::QLST.Properties.Resources.User;
             this.khachhang.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.khachhang.Name = "khachhang";
-            this.khachhang.Size = new System.Drawing.Size(261, 33);
+            this.khachhang.Size = new System.Drawing.Size(196, 26);
             this.khachhang.Text = "Khách Hàng";
             this.khachhang.Click += new System.EventHandler(this.khachhang_Click);
             // 
@@ -317,9 +333,10 @@
             this.panel5.Controls.Add(this.menuStrip4);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Font = new System.Drawing.Font("Ravie", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel5.Location = new System.Drawing.Point(0, 277);
+            this.panel5.Location = new System.Drawing.Point(0, 225);
+            this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(268, 67);
+            this.panel5.Size = new System.Drawing.Size(201, 54);
             this.panel5.TabIndex = 6;
             // 
             // menuStrip4
@@ -330,7 +347,8 @@
             this.menuStrip4.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
             this.menuStrip4.Location = new System.Drawing.Point(0, 0);
             this.menuStrip4.Name = "menuStrip4";
-            this.menuStrip4.Size = new System.Drawing.Size(268, 39);
+            this.menuStrip4.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip4.Size = new System.Drawing.Size(201, 32);
             this.menuStrip4.TabIndex = 0;
             this.menuStrip4.Text = "menuStrip4";
             // 
@@ -342,7 +360,7 @@
             this.Nhanvien.Image = global::QLST.Properties.Resources.nv;
             this.Nhanvien.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Nhanvien.Name = "Nhanvien";
-            this.Nhanvien.Size = new System.Drawing.Size(261, 33);
+            this.Nhanvien.Size = new System.Drawing.Size(196, 26);
             this.Nhanvien.Text = "Nhân Viên";
             this.Nhanvien.Click += new System.EventHandler(this.Nhanvien_Click);
             // 
@@ -351,9 +369,10 @@
             this.panel6.Controls.Add(this.menuStrip5);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel6.Font = new System.Drawing.Font("Ravie", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel6.Location = new System.Drawing.Point(0, 344);
+            this.panel6.Location = new System.Drawing.Point(0, 279);
+            this.panel6.Margin = new System.Windows.Forms.Padding(2);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(268, 64);
+            this.panel6.Size = new System.Drawing.Size(201, 52);
             this.panel6.TabIndex = 7;
             // 
             // menuStrip5
@@ -364,7 +383,8 @@
             this.menuStrip5.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
             this.menuStrip5.Location = new System.Drawing.Point(0, 0);
             this.menuStrip5.Name = "menuStrip5";
-            this.menuStrip5.Size = new System.Drawing.Size(268, 39);
+            this.menuStrip5.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip5.Size = new System.Drawing.Size(201, 32);
             this.menuStrip5.TabIndex = 0;
             this.menuStrip5.Text = "menuStrip5";
             // 
@@ -376,7 +396,7 @@
             this.kho.Image = global::QLST.Properties.Resources.kho;
             this.kho.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.kho.Name = "kho";
-            this.kho.Size = new System.Drawing.Size(261, 33);
+            this.kho.Size = new System.Drawing.Size(196, 26);
             this.kho.Text = "Kho";
             this.kho.Click += new System.EventHandler(this.kho_Click);
             // 
@@ -386,9 +406,10 @@
             this.panel7.Controls.Add(this.menuStrip6);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel7.Font = new System.Drawing.Font("Ravie", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel7.Location = new System.Drawing.Point(0, 472);
+            this.panel7.Location = new System.Drawing.Point(0, 383);
+            this.panel7.Margin = new System.Windows.Forms.Padding(2);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(268, 140);
+            this.panel7.Size = new System.Drawing.Size(201, 114);
             this.panel7.TabIndex = 8;
             // 
             // panel8
@@ -396,9 +417,10 @@
             this.panel8.Controls.Add(this.menuStrip7);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel8.Font = new System.Drawing.Font("Ravie", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel8.Location = new System.Drawing.Point(0, 63);
+            this.panel8.Location = new System.Drawing.Point(0, 51);
+            this.panel8.Margin = new System.Windows.Forms.Padding(2);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(268, 77);
+            this.panel8.Size = new System.Drawing.Size(201, 63);
             this.panel8.TabIndex = 6;
             // 
             // menuStrip7
@@ -409,7 +431,8 @@
             this.menuStrip7.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
             this.menuStrip7.Location = new System.Drawing.Point(0, 0);
             this.menuStrip7.Name = "menuStrip7";
-            this.menuStrip7.Size = new System.Drawing.Size(268, 39);
+            this.menuStrip7.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip7.Size = new System.Drawing.Size(201, 32);
             this.menuStrip7.TabIndex = 0;
             this.menuStrip7.Text = "menuStrip7";
             // 
@@ -421,8 +444,10 @@
             this.Help.Image = global::QLST.Properties.Resources.Help;
             this.Help.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Help.Name = "Help";
-            this.Help.Size = new System.Drawing.Size(261, 33);
+            this.Help.ShortcutKeys = System.Windows.Forms.Keys.F1;
+            this.Help.Size = new System.Drawing.Size(196, 26);
             this.Help.Text = "Trợ giúp";
+            this.Help.Click += new System.EventHandler(this.Help_Click);
             // 
             // menuStrip6
             // 
@@ -432,7 +457,8 @@
             this.menuStrip6.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
             this.menuStrip6.Location = new System.Drawing.Point(0, 0);
             this.menuStrip6.Name = "menuStrip6";
-            this.menuStrip6.Size = new System.Drawing.Size(268, 39);
+            this.menuStrip6.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip6.Size = new System.Drawing.Size(201, 32);
             this.menuStrip6.TabIndex = 0;
             this.menuStrip6.Text = "menuStrip6";
             // 
@@ -444,7 +470,7 @@
             this.thongke.Image = global::QLST.Properties.Resources.tk;
             this.thongke.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.thongke.Name = "thongke";
-            this.thongke.Size = new System.Drawing.Size(261, 33);
+            this.thongke.Size = new System.Drawing.Size(196, 26);
             this.thongke.Text = "Thống Kê";
             this.thongke.Click += new System.EventHandler(this.thongke_Click);
             // 
@@ -462,21 +488,23 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.ForeColor = System.Drawing.Color.White;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(268, 612);
+            this.panel1.Size = new System.Drawing.Size(201, 497);
             this.panel1.TabIndex = 0;
             // 
             // Form_Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
-            this.ClientSize = new System.Drawing.Size(1310, 612);
+            this.ClientSize = new System.Drawing.Size(982, 497);
             this.Controls.Add(this.panel_main);
             this.Controls.Add(this.paneltop);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form_Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form_Main";
