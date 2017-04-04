@@ -197,12 +197,7 @@ select @macthd1=macthd from inserted
 select @mahd1=mahd from ChitietHoaDon  where MactHD=@macthd1
 select @macthd2=macthd from deleted
 select @mahd2=mahd from ChitietHoaDon  where MactHD=@macthd2
-update HoaDon
-set Tongtien=(select sum(tien) from ChitietHoaDon where ChitietHoaDon.MaHD=HoaDon.MaHD)
-where MaHD=@mahd1
-update HoaDon
-set Tongtien=(select sum(tien) from ChitietHoaDon where ChitietHoaDon.MaHD=HoaDon.MaHD)
-where MaHD=@mahd2
+
 end
 go
 create trigger tongtien1 on chitiethoadon for update as
@@ -410,3 +405,18 @@ where CTn.MaHH=HH.MaHH and CTN.MaPN=PN.MaPN
 group by CTN.MaHH,HH.TenHH, CTN.Dongia,CTN.Tien
 
 >>>>>>> ac83f9ff2f81bc51a61ee2d568dc2b1d2a48ce1c
+/*update HangHoa
+set Soluong=100
+update ChitietHoaDon
+set soluong=2
+update
+ChitietNhap
+set Soluong=2
+update HoaDon
+set Tongtien=(select sum(tien) from ChitietHoaDon where ChitietHoaDon.MaHD=HoaDon.MaHD)
+update ChitietHoaDon
+set Tien=Dongia*soluong
+update ChitietNhap
+set Tien=Dongia*Soluong
+update PhieuNhap
+set Tongtien=(select sum(tien) from ChitietNhap where ChitietNhap.MaPN=PhieuNhap.MaPN)*/

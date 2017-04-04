@@ -116,7 +116,7 @@ namespace QLST.BUS
             return DAO.xuat_ctn(ma);
 
         }
-<<<<<<< HEAD
+
 
         //thong ke
         public static DataTable tk_hh()
@@ -132,8 +132,9 @@ namespace QLST.BUS
         public static DataTable tk_nhap()
         {
             return DAO.tk_nhap();
+        }
 
-=======
+
         public static int them_pn(PhieuNhap a)
         {
             return DAO.them_pn(a);
@@ -161,7 +162,7 @@ namespace QLST.BUS
         public static int xoa_ctn(Chitietnhap a)
         {
             return DAO.xoa_ctn(a);
->>>>>>> refs/remotes/origin/master
+
         }
     }
 }
