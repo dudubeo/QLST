@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace QLST
 {
@@ -156,6 +157,11 @@ namespace QLST
         private void Form_Main_Load(object sender, EventArgs e)
         {
             panel_main.Width = 1052;
+        }
+
+        private void Help_Click(object sender, EventArgs e)
+        {
+            Process.Start("http://qlsieuthi.comeze.com/");
         }
     }
 }
