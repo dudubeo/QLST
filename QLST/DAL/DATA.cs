@@ -107,6 +107,14 @@ namespace QLST.DAL
         {
             return DataProvider.GetData("get_HH1" + "'" + ma + "'");
         }
+        public static DataTable xuat_HH2(float a,float b)
+        {
+            return DataProvider.GetData("get_HH2" + a +","+b);
+        }
+        public static DataTable xuat_HH3(string a)
+        {
+            return DataProvider.GetData("get_HH3" + "'" + a + "'");
+        }
         //Kho
         public static DataTable xuat_Kho()
         {

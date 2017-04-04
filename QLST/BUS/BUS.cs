@@ -53,6 +53,14 @@ namespace QLST.BUS
         {
             return DAO.xuat_HH1(ma);
         }
+        public static DataTable xuat_HH2(float a,float b)
+        {
+            return DAO.xuat_HH2(a,b);
+        }
+        public static DataTable xuat_HH3(string a)
+        {
+            return DAO.xuat_HH3(a);
+        }
         //Kho
         public static DataTable xuat_Kho()
         {

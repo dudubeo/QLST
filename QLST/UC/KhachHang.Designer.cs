@@ -42,9 +42,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txt_makh = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_xoa = new System.Windows.Forms.Button();
+            this.btn_luu = new System.Windows.Forms.Button();
+            this.btn_sua = new System.Windows.Forms.Button();
             this.btn_them = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -76,6 +76,9 @@
             // cmb_gt
             // 
             this.cmb_gt.FormattingEnabled = true;
+            this.cmb_gt.Items.AddRange(new object[] {
+            "Nam",
+            "Nữ"});
             this.cmb_gt.Location = new System.Drawing.Point(666, 45);
             this.cmb_gt.Name = "cmb_gt";
             this.cmb_gt.Size = new System.Drawing.Size(191, 24);
@@ -180,38 +183,41 @@
             this.label1.TabIndex = 14;
             this.label1.Text = "Mã KH";
             // 
-            // button3
+            // btn_xoa
             // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(621, 192);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(92, 40);
-            this.button3.TabIndex = 30;
-            this.button3.Text = "Xóa";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button3.UseVisualStyleBackColor = true;
+            this.btn_xoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_xoa.Location = new System.Drawing.Point(621, 192);
+            this.btn_xoa.Name = "btn_xoa";
+            this.btn_xoa.Size = new System.Drawing.Size(92, 40);
+            this.btn_xoa.TabIndex = 30;
+            this.btn_xoa.Text = "Xóa";
+            this.btn_xoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_xoa.UseVisualStyleBackColor = true;
+            this.btn_xoa.Click += new System.EventHandler(this.btn_xoa_Click);
             // 
-            // button2
+            // btn_luu
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(481, 192);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(92, 40);
-            this.button2.TabIndex = 29;
-            this.button2.Text = "Lưu";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn_luu.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_luu.Location = new System.Drawing.Point(481, 192);
+            this.btn_luu.Name = "btn_luu";
+            this.btn_luu.Size = new System.Drawing.Size(92, 40);
+            this.btn_luu.TabIndex = 29;
+            this.btn_luu.Text = "Lưu";
+            this.btn_luu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_luu.UseVisualStyleBackColor = true;
+            this.btn_luu.Click += new System.EventHandler(this.btn_luu_Click);
             // 
-            // button1
+            // btn_sua
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(343, 192);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(92, 40);
-            this.button1.TabIndex = 28;
-            this.button1.Text = "Sửa";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_sua.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_sua.Location = new System.Drawing.Point(343, 192);
+            this.btn_sua.Name = "btn_sua";
+            this.btn_sua.Size = new System.Drawing.Size(92, 40);
+            this.btn_sua.TabIndex = 28;
+            this.btn_sua.Text = "Sửa";
+            this.btn_sua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_sua.UseVisualStyleBackColor = true;
+            this.btn_sua.Click += new System.EventHandler(this.btn_sua_Click);
             // 
             // btn_them
             // 
@@ -223,6 +229,7 @@
             this.btn_them.Text = "Thêm";
             this.btn_them.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_them.UseVisualStyleBackColor = true;
+            this.btn_them.Click += new System.EventHandler(this.btn_them_Click);
             // 
             // pictureBox1
             // 
@@ -272,9 +279,9 @@
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btn_xoa);
+            this.Controls.Add(this.btn_luu);
+            this.Controls.Add(this.btn_sua);
             this.Controls.Add(this.btn_them);
             this.Controls.Add(this.cmb_gt);
             this.Controls.Add(this.label7);
@@ -319,9 +326,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txt_makh;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_xoa;
+        private System.Windows.Forms.Button btn_luu;
+        private System.Windows.Forms.Button btn_sua;
         private System.Windows.Forms.Button btn_them;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;

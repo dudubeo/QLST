@@ -13,7 +13,7 @@ go
 create proc get_pn
 as begin
 select MaPN as[Mã PN],TenKho as [Tên Kho],TenNV as[Tên Thủ Kho],Ngaylap as[Ngày Lập],
-VAT as [VAT (%)],Tongtien as [Tổng Tiền ] from PhieuNhap,NhanVien,KhoHang
+cast((VAT*100)as int) as[Thuế VAT(%)],cast(Tongtien as int) as[Tổng tiền] from PhieuNhap,NhanVien,KhoHang
 where PhieuNhap.MaKho=KhoHang.MaKho and PhieuNhap.MaThuKho=NhanVien.MaNV
 end
 go
@@ -262,6 +262,7 @@ set TenNV=@tennv,
 	Gioitinh=@gt,
 	DiaChi=@diachi,
 	SDT=@sdt
+	where MaNV=@manv
 end
 go
 create proc xoa_nv(@manv char(10))
@@ -288,6 +289,7 @@ Diachi=@diachi,
 GioiTinh=@gt,
 SDT=@sdt,
 diem=@diachi
+where MaKh=@makh
 end
 go
 create proc xoa_kh(@makh char(10))
@@ -328,7 +330,7 @@ update PhieuNhap
 set Tongtien=@tongtien
 where MaPN=@mapn
 end
-
+go
 create trigger tt on ChitietNhap for update,insert,delete
 as
 begin
@@ -341,24 +343,40 @@ where MaPN=@MAPNMOI
 update PhieuNhap
 set Tongtien=(select sum(Tien) from ChitietNhap where MaPN=@MAPNCU)
 where MaPN=@MAPNCU
-
 end
+go
 ---chi tiết nhập
 create proc them_ctn(@mactn char(10),@mapn char(10),@mahh char(15),@soluong int,@tien float,@dongia float)
 as begin
 if exists(select Mactn from ChitietNhap where Mactn=@mactn) print('khong them duoc')
 else insert ChitietNhap values(@mactn,@mapn,@mahh,@soluong,@tien,@dongia)
 end
+go
 create proc sua_ctn(@mactn char(10),@mahh char(15),@soluong int,@tien float,@dongia float)
 as begin
 update ChitietNhap
 set MaHH=@mahh,
-Soluong=Soluong,
+Soluong=@soluong,
 Tien=@tien,
 Dongia=@dongia
 where Mactn=@mactn
 end
+go
 create proc xoa_ctn(@mactn char(10))
 as begin
 delete ChitietNhap where Mactn=@mactn
+end
+----
+go
+create proc get_HH2(@giaban1 float,@giaban2 float)
+as begin
+select MaHH as[Mã Hàng Hóa],TenHH as[Tên Hàng Hóa],ChungLoai as[Chủng Loại],DonViTinh as[Đơn vị tính],trongluong as [Trọng Lượng],
+GiaBan as[Giá Bán],NoiSX as[ Nơi SX],HSD as[Hạn sử dụng] from HangHoa where GiaBan >@giaban1 and GiaBan<@giaban2
+end
+------
+go
+alter proc get_HH3(@chungloai nvarchar(30))
+as begin
+select MaHH as[Mã Hàng Hóa],TenHH as[Tên Hàng Hóa],ChungLoai as[Chủng Loại],DonViTinh as[Đơn vị tính],trongluong as [Trọng Lượng],
+GiaBan as[Giá Bán],NoiSX as[ Nơi SX],HSD as[Hạn sử dụng] from HangHoa where ChungLoai = @chungloai
 end

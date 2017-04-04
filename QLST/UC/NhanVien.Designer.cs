@@ -42,7 +42,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.cmb_gt = new System.Windows.Forms.ComboBox();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btn_xoa = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btn_them = new System.Windows.Forms.Button();
@@ -175,21 +175,25 @@
             // cmb_gt
             // 
             this.cmb_gt.FormattingEnabled = true;
+            this.cmb_gt.Items.AddRange(new object[] {
+            "Nam",
+            "Nữ"});
             this.cmb_gt.Location = new System.Drawing.Point(660, 41);
             this.cmb_gt.Name = "cmb_gt";
             this.cmb_gt.Size = new System.Drawing.Size(191, 24);
             this.cmb_gt.TabIndex = 13;
             // 
-            // button3
+            // btn_xoa
             // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(627, 190);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(92, 40);
-            this.button3.TabIndex = 26;
-            this.button3.Text = "Xóa";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button3.UseVisualStyleBackColor = true;
+            this.btn_xoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_xoa.Location = new System.Drawing.Point(627, 190);
+            this.btn_xoa.Name = "btn_xoa";
+            this.btn_xoa.Size = new System.Drawing.Size(92, 40);
+            this.btn_xoa.TabIndex = 26;
+            this.btn_xoa.Text = "Xóa";
+            this.btn_xoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_xoa.UseVisualStyleBackColor = true;
+            this.btn_xoa.Click += new System.EventHandler(this.btn_xoa_Click);
             // 
             // button2
             // 
@@ -201,6 +205,7 @@
             this.button2.Text = "Lưu";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -212,6 +217,7 @@
             this.button1.Text = "Sửa";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btn_them
             // 
@@ -223,6 +229,7 @@
             this.btn_them.Text = "Thêm";
             this.btn_them.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_them.UseVisualStyleBackColor = true;
+            this.btn_them.Click += new System.EventHandler(this.btn_them_Click);
             // 
             // pictureBox1
             // 
@@ -272,7 +279,7 @@
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btn_xoa);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btn_them);
@@ -319,7 +326,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox cmb_gt;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btn_xoa;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btn_them;
