@@ -35,6 +35,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.lbl_dk = new System.Windows.Forms.Label();
             this.txt_tk = new System.Windows.Forms.TextBox();
             this.txt_mk = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -42,13 +44,11 @@
             this.checkBox_hienmk = new System.Windows.Forms.CheckBox();
             this.lbl_quenmk = new System.Windows.Forms.Label();
             this.errortk = new System.Windows.Forms.ErrorProvider(this.components);
-            this.lbl_dk = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errortk)).BeginInit();
-            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -108,9 +108,33 @@
             this.label3.Location = new System.Drawing.Point(17, 10);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(153, 19);
+            this.label3.Size = new System.Drawing.Size(154, 19);
             this.label3.TabIndex = 1;
             this.label3.Text = "Want new account?";
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.Lime;
+            this.panel4.Controls.Add(this.lbl_dk);
+            this.panel4.ForeColor = System.Drawing.Color.SpringGreen;
+            this.panel4.Location = new System.Drawing.Point(243, 7);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(89, 34);
+            this.panel4.TabIndex = 0;
+            // 
+            // lbl_dk
+            // 
+            this.lbl_dk.AutoSize = true;
+            this.lbl_dk.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_dk.ForeColor = System.Drawing.Color.DimGray;
+            this.lbl_dk.Location = new System.Drawing.Point(15, 7);
+            this.lbl_dk.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_dk.Name = "lbl_dk";
+            this.lbl_dk.Size = new System.Drawing.Size(61, 19);
+            this.lbl_dk.TabIndex = 0;
+            this.lbl_dk.Text = "Sign In";
+            this.lbl_dk.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txt_tk
             // 
@@ -123,6 +147,7 @@
             this.txt_tk.TabIndex = 2;
             this.txt_tk.Text = "User name";
             this.txt_tk.Click += new System.EventHandler(this.txt_tk_Click);
+            this.txt_tk.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_tk_KeyDown);
             this.txt_tk.Leave += new System.EventHandler(this.txt_tk_Leave);
             // 
             // txt_mk
@@ -137,6 +162,7 @@
             this.txt_mk.TabIndex = 3;
             this.txt_mk.Text = "Password";
             this.txt_mk.Click += new System.EventHandler(this.txt_mk_Click);
+            this.txt_mk.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_mk_KeyDown);
             // 
             // panel3
             // 
@@ -194,30 +220,6 @@
             this.errortk.Icon = ((System.Drawing.Icon)(resources.GetObject("errortk.Icon")));
             this.errortk.RightToLeft = true;
             // 
-            // lbl_dk
-            // 
-            this.lbl_dk.AutoSize = true;
-            this.lbl_dk.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_dk.ForeColor = System.Drawing.Color.DimGray;
-            this.lbl_dk.Location = new System.Drawing.Point(15, 7);
-            this.lbl_dk.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbl_dk.Name = "lbl_dk";
-            this.lbl_dk.Size = new System.Drawing.Size(61, 19);
-            this.lbl_dk.TabIndex = 0;
-            this.lbl_dk.Text = "Sign In";
-            this.lbl_dk.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.Lime;
-            this.panel4.Controls.Add(this.lbl_dk);
-            this.panel4.ForeColor = System.Drawing.Color.SpringGreen;
-            this.panel4.Location = new System.Drawing.Point(243, 7);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(89, 34);
-            this.panel4.TabIndex = 0;
-            // 
             // Form_dangnhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -242,11 +244,11 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errortk)).EndInit();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -91,7 +91,7 @@ namespace QLST.UC
             else if ((chuoi_dau.Contains(">")))
             {
                 string b = chuoi_dau.Substring(1);
-                string s = "select MaHH as[Mã Hàng Hóa],TenHH as[Tên Hàng Hóa],ChungLoai as[Chủng Loại],DonViTinh as[Đơn vị tính],trongluong as [Trọng Lượng],GiaBan as[Giá Bán],NoiSX as[Nơi SX],HSD as[Hạn sử dụng] from HangHoa where GiaBan > '" + 0 + "' and+ GiaBan<'" + float.Parse(b) + "' ";
+                string s = "select MaHH as[Mã Hàng Hóa],TenHH as[Tên Hàng Hóa],ChungLoai as[Chủng Loại],DonViTinh as[Đơn vị tính],trongluong as [Trọng Lượng],GiaBan as[Giá Bán],NoiSX as[Nơi SX],HSD as[Hạn sử dụng] from HangHoa where GiaBan > '" + 0 + "' and+ GiaBan>'" + float.Parse(b) + "' ";
                 
                 dulieu(s);
             }else {

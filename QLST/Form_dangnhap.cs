@@ -96,5 +96,15 @@ namespace QLST
 
             }
         }
+
+        private void txt_tk_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) txt_mk.Focus();
+        }
+
+        private void txt_mk_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) lbl_dangnhap_Click(sender, null);
+        }
     }
 }
